@@ -1,0 +1,43 @@
+mybatis:
+  type-aliases-package: com.example.demo.model          #这个是什么玩意？
+  type-handlers-package: com.example.typehandler        #还有这个
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/user?useSSL=false&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PRC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+    #开发阶段务必关闭缓存
+    cache: false
+
+  servlet:
+    multipart:
+      #最大文件大小。值可以使用后缀“MB”或“KB”。指示兆字节或千字节大小。
+      max-file-size: -1
+      # 最大请求大小可以是mb也可以是kb
+      max-request-size: -1
+
+
+
+
+#配置外部访问文件（把上传的图片视频文件放到E盘下的fileUpload文件夹下）
+#?????不懂
+cbs:
+  imagesPath: file:/C:/test/
+
+
+
